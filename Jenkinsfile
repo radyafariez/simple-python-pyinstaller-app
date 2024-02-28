@@ -23,4 +23,9 @@ node {
         sh 'pyinstaller --onefile sources/add2vals.py'
         sleep time: 1, unit: 'MINUTES'
     }
+    post {
+        success {
+            archiveArtifacts 'dist/add2vals'
+            }
+        }
 }
